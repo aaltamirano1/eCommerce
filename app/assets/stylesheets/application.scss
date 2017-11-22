@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import "font-awesome";
+
+a,
+a:visited,
+a:hover{
+	background-color: transparent;
+	text-decoration: none;
+}
+.well{
+	height: 375px;
+}
+.form-control{
+	width: 400px;
+}
+
+nav{
+	padding: 7px 0;
+	background-color: white;
+	border-bottom: 1px solid #ABB7B7;
+	box-shadow: 0 0 5px #ABB7B7;
+}
+
+.main{
+	margin-top: 70px;
+}
+
+.thumb{
+	height: 50px;
+	width: 50px;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:visited,
+.jumbotron{
+	background-color:  #F89406;
+}
+.btn-primary:focus,
+.btn.btn-primary.active.focus,
+.btn.btn-primary.active:focus,
+.btn.btn-primary.active:hover,
+.btn.btn-primary:active.focus,
+.btn.btn-primary:active:focus,
+.btn.btn-primary:active:hover {
+	background-color: #E87E04;
+}
+.more-info:hover,
+.more-info:active{
+	color: #E87E04;
+}
+.btn-primary,
+.btn-primary:visited{
+	border-style: none;
+	color: white;
+}
+.btn-primary:hover{
+	color: #EEE;
+}
+.btn-round{
+	border-radius: 17px;
+	font-weight: bold;
+	font-size: .95em;
+	padding: 8px 14px;
+}
+
+
+/******************************** ALL ITEMS */
+.quick-info-div{
+	flex-grow: 1;
+}
+.quick-info{
+	    position: absolute;
+    bottom: 35px;
+}
+.quick-info:hover,
+.more-info{
+	color: #F89406;
+}

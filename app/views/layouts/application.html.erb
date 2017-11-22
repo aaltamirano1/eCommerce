@@ -9,6 +9,53 @@
   </head>
 
   <body>
-    <%= yield %>
+		<nav class="navbar-fixed-top">
+			<div class="container">
+			<% if user_signed_in? %>
+			  <%= link_to "Home", root_path, class: "btn btn-round btn-primary pull-left", style: "margin-right: 10px" %>
+
+			  <div class="dropdown pull-left" style="margin-right: 10px">
+			    <button class="btn btn-default btn-round dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			      Products by Category
+			      <span class="caret"></span>
+			    </button>
+			      <ul class="dropdown-menu">
+					    <% @categories.each do |category| %>
+					      <li><%= link_to category.name, categorical_path(id: category.id) %></li>
+					    <% end %>
+					  </ul>
+			  </div>
+
+			  <div class="dropdown pull-left">
+			    <button class="btn btn-default btn-round dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			      Products by Brand
+			      <span class="caret"></span>
+			    </button>
+			      <ul class="dropdown-menu">
+					    <% @brands.each do |brand| %>
+					      <li><%= link_to brand, branding_path(brand: brand) %></li>
+					    <% end %>
+					  </ul>
+			  </div>
+
+			  <div class="dropdown pull-right">
+			    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			      <span class="caret"></span>
+			    </button>
+			    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			      <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+			      <li><%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></li>
+			    </ul>
+			  </div>
+			<% else %>
+				<%= link_to "Log in", new_session_path(resource_name), class: 'btn btn-default btn-round' %>
+			  <%= link_to "Sign up", new_registration_path(resource_name), class: 'btn btn-default btn-round' %>
+			<% end %>
+			</div>
+		</nav>
+  	<div class="main">
+  	  <%= yield %>
+  	</div>
+
   </body>
 </html>
